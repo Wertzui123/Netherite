@@ -7,3 +7,4 @@ This plugin adds netherite items, crafting recipes and more to your PocketMine-M
 - [x] Ingot and scrap
 - [ ] Knockback resistance (WIP)
 - [ ] Crafting Recipes (WIP)
+- [ ] Items are immune to fire
