@@ -9,3 +9,6 @@ This plugin adds netherite items, crafting recipes and more to your PocketMine-M
 - [ ] Knockback resistance (WIP)
 - [ ] Crafting Recipes (WIP)
 - [x] Items are immune to fire
+
+# Icon
+The icon is just a normal netherite helmet and belongs to Mojang.
