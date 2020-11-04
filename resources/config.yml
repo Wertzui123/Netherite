@@ -1,0 +1,7 @@
+---
+# Toggle the crafting recipes
+# vanilla: Diamond Sword + Netherite Ingot = Netherite Sword
+# custom: Recipes like for all other tiers (2 Netherite Ingots + Stick = Netherite Sword)
+# Everything else disables crafting recipes
+crafting-recipes: "vanilla"
+...

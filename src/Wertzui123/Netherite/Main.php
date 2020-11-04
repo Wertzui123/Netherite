@@ -3,6 +3,7 @@
 namespace Wertzui123\Netherite;
 
 use pocketmine\block\BlockFactory;
+use pocketmine\inventory\ShapedRecipe;
 use pocketmine\inventory\ShapelessRecipe;
 use Wertzui123\Netherite\block\Dirt;
 use Wertzui123\Netherite\block\Grass;
@@ -48,11 +49,84 @@ class Main extends PluginBase
         ItemFactory::registerItem(new NetheriteBoots());
         Item::initCreativeItems();
 
-        $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([Item::get(Item::DIAMOND_SWORD), Item::get(self::ITEM_NETHERITE_INGOT)], [Item::get(self::ITEM_NETHERITE_SWORD)]));
-        $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([Item::get(Item::DIAMOND_SHOVEL), Item::get(self::ITEM_NETHERITE_INGOT)], [Item::get(self::ITEM_NETHERITE_SHOVEL)]));
-        $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([Item::get(Item::DIAMOND_PICKAXE), Item::get(self::ITEM_NETHERITE_INGOT)], [Item::get(self::ITEM_NETHERITE_PICKAXE)]));
-        $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([Item::get(Item::DIAMOND_AXE), Item::get(self::ITEM_NETHERITE_INGOT)], [Item::get(self::ITEM_NETHERITE_AXE)]));
-        $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([Item::get(Item::DIAMOND_HOE), Item::get(self::ITEM_NETHERITE_INGOT)], [Item::get(self::ITEM_NETHERITE_HOE)]));
+        switch ($this->getConfig()->get('crafting-recipes', false)) {
+            case 'vanilla':
+                $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([Item::get(Item::DIAMOND_SWORD), Item::get(self::ITEM_NETHERITE_INGOT)], [Item::get(self::ITEM_NETHERITE_SWORD)]));
+                $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([Item::get(Item::DIAMOND_SHOVEL), Item::get(self::ITEM_NETHERITE_INGOT)], [Item::get(self::ITEM_NETHERITE_SHOVEL)]));
+                $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([Item::get(Item::DIAMOND_PICKAXE), Item::get(self::ITEM_NETHERITE_INGOT)], [Item::get(self::ITEM_NETHERITE_PICKAXE)]));
+                $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([Item::get(Item::DIAMOND_AXE), Item::get(self::ITEM_NETHERITE_INGOT)], [Item::get(self::ITEM_NETHERITE_AXE)]));
+                $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([Item::get(Item::DIAMOND_HOE), Item::get(self::ITEM_NETHERITE_INGOT)], [Item::get(self::ITEM_NETHERITE_HOE)]));
+                break;
+            case 'custom':
+                $this->getServer()->getCraftingManager()->registerShapedRecipe(new ShapedRecipe(
+                    [
+                        ' A ',
+                        ' A ',
+                        ' B '
+                    ],
+                    ['A' => Item::get(self::ITEM_NETHERITE_INGOT), 'B' => Item::get(Item::STICK)],
+                    [Item::get(self::ITEM_NETHERITE_SWORD)])
+                );
+                $this->getServer()->getCraftingManager()->registerShapedRecipe(new ShapedRecipe(
+                        [
+                            ' A ',
+                            ' B ',
+                            ' B '
+                        ],
+                        ['A' => Item::get(self::ITEM_NETHERITE_INGOT), 'B' => Item::get(Item::STICK)],
+                        [Item::get(self::ITEM_NETHERITE_SHOVEL)])
+                );
+                $this->getServer()->getCraftingManager()->registerShapedRecipe(new ShapedRecipe(
+                        [
+                            'AAA',
+                            ' B ',
+                            ' B '
+                        ],
+                        ['A' => Item::get(self::ITEM_NETHERITE_INGOT), 'B' => Item::get(Item::STICK)],
+                        [Item::get(self::ITEM_NETHERITE_PICKAXE)])
+                );
+                $this->getServer()->getCraftingManager()->registerShapedRecipe(new ShapedRecipe(
+                        [
+                            ' AA',
+                            ' BA',
+                            ' B '
+                        ],
+                        ['A' => Item::get(self::ITEM_NETHERITE_INGOT), 'B' => Item::get(Item::STICK)],
+                        [Item::get(self::ITEM_NETHERITE_AXE)])
+                );
+                $this->getServer()->getCraftingManager()->registerShapedRecipe(new ShapedRecipe(
+                        [
+                            'AA ',
+                            'AB ',
+                            ' B '
+                        ],
+                        ['A' => Item::get(self::ITEM_NETHERITE_INGOT), 'B' => Item::get(Item::STICK)],
+                        [Item::get(self::ITEM_NETHERITE_AXE)])
+                );
+                $this->getServer()->getCraftingManager()->registerShapedRecipe(new ShapedRecipe(
+                        [
+                            'AA ',
+                            ' B ',
+                            ' B '
+                        ],
+                        ['A' => Item::get(self::ITEM_NETHERITE_INGOT), 'B' => Item::get(Item::STICK)],
+                        [Item::get(self::ITEM_NETHERITE_HOE)])
+                );
+                $this->getServer()->getCraftingManager()->registerShapedRecipe(new ShapedRecipe(
+                        [
+                            ' AA',
+                            ' B ',
+                            ' B '
+                        ],
+                        ['A' => Item::get(self::ITEM_NETHERITE_INGOT), 'B' => Item::get(Item::STICK)],
+                        [Item::get(self::ITEM_NETHERITE_HOE)])
+                );
+                $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([Item::get(Item::DIAMOND_SHOVEL), Item::get(self::ITEM_NETHERITE_INGOT)], [Item::get(self::ITEM_NETHERITE_SHOVEL)]));
+                $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([Item::get(Item::DIAMOND_PICKAXE), Item::get(self::ITEM_NETHERITE_INGOT)], [Item::get(self::ITEM_NETHERITE_PICKAXE)]));
+                $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([Item::get(Item::DIAMOND_AXE), Item::get(self::ITEM_NETHERITE_INGOT)], [Item::get(self::ITEM_NETHERITE_AXE)]));
+                $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([Item::get(Item::DIAMOND_HOE), Item::get(self::ITEM_NETHERITE_INGOT)], [Item::get(self::ITEM_NETHERITE_HOE)]));
+                break;
+        }
 
         $this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
     }
