@@ -42,7 +42,6 @@ class EventListener implements Listener
      */
     public function onKnockback(EntityDamageByEntityEvent $event)
     {
-        // TODO: This may not work
         if (!$event->getEntity() instanceof Player) return;
         $modifier = 0;
         if ($event->getEntity()->getArmorInventory()->getHelmet() instanceof NetheriteHelmet) {
@@ -58,7 +57,7 @@ class EventListener implements Listener
             $modifier += 1;
         }
         if ($modifier > 0) {
-            $event->setKnockback($event->getKnockback() * ((5 - $modifier) / 5)); // TODO: How much knockback resistance does netherite armor really give you?
+            $event->setKnockback($event->getKnockback() - $event->getKnockBack() * ($modifier / 10));
         }
     }
 
