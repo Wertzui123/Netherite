@@ -22,8 +22,4 @@ class NetheriteBoots extends Armor
         return 482;
     }
 
-    public function getKnockBackResistance(){
-
-    }
-
 }
