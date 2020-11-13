@@ -1,13 +1,13 @@
 # Netherite
 This plugin adds netherite items, crafting recipes and more to your PocketMine-MP server!
-<br>The .phar can be found on <a href="https://poggit.pmmp.io/ci/Wertzui123/Netherite/Netherite">poggit</a>.
+<br>The .phar can be found on <a href="https://poggit.pmmp.io/p/Netherite">poggit</a>.
 
 # Features
 - [x] Tools
 - [x] Armor
 - [x] Ingot and scrap
-- [ ] Knockback resistance (WIP)
-- [ ] Crafting Recipes (WIP)
+- [x] Knockback resistance
+- [x] Crafting recipes
 - [x] Items are immune to fire
 
 # Icon
