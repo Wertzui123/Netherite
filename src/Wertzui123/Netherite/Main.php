@@ -36,17 +36,17 @@ class Main extends PluginBase
     {
         BlockFactory::registerBlock(new Grass(), true);
         BlockFactory::registerBlock(new Dirt(), true);
-        ItemFactory::registerItem(new Item(self::ITEM_NETHERITE_INGOT, 0, "Netherite Ingot"));
-        ItemFactory::registerItem(new Item(self::ITEM_NETHERITE_SCRAP, 0, "Netherite Scrap"));
-        ItemFactory::registerItem(new Sword(self::ITEM_NETHERITE_SWORD, 0, "Netherite Sword", TieredTool::TIER_NETHERITE));
-        ItemFactory::registerItem(new Shovel(self::ITEM_NETHERITE_SHOVEL, 0, "Netherite Shovel", TieredTool::TIER_NETHERITE));
-        ItemFactory::registerItem(new Pickaxe(self::ITEM_NETHERITE_PICKAXE, 0, "Netherite Pickaxe", TieredTool::TIER_NETHERITE));
-        ItemFactory::registerItem(new Axe(self::ITEM_NETHERITE_AXE, 0, "Netherite Axe", TieredTool::TIER_NETHERITE));
-        ItemFactory::registerItem(new Hoe(self::ITEM_NETHERITE_HOE, 0, "Netherite Hoe", TieredTool::TIER_NETHERITE));
-        ItemFactory::registerItem(new NetheriteHelmet());
-        ItemFactory::registerItem(new NetheriteChestplate());
-        ItemFactory::registerItem(new NetheriteLeggings());
-        ItemFactory::registerItem(new NetheriteBoots());
+        ItemFactory::registerItem(new Item(self::ITEM_NETHERITE_INGOT, 0, "Netherite Ingot"), true);
+        ItemFactory::registerItem(new Item(self::ITEM_NETHERITE_SCRAP, 0, "Netherite Scrap"), true);
+        ItemFactory::registerItem(new Sword(self::ITEM_NETHERITE_SWORD, 0, "Netherite Sword", TieredTool::TIER_NETHERITE), true);
+        ItemFactory::registerItem(new Shovel(self::ITEM_NETHERITE_SHOVEL, 0, "Netherite Shovel", TieredTool::TIER_NETHERITE), true);
+        ItemFactory::registerItem(new Pickaxe(self::ITEM_NETHERITE_PICKAXE, 0, "Netherite Pickaxe", TieredTool::TIER_NETHERITE), true);
+        ItemFactory::registerItem(new Axe(self::ITEM_NETHERITE_AXE, 0, "Netherite Axe", TieredTool::TIER_NETHERITE), true);
+        ItemFactory::registerItem(new Hoe(self::ITEM_NETHERITE_HOE, 0, "Netherite Hoe", TieredTool::TIER_NETHERITE), true);
+        ItemFactory::registerItem(new NetheriteHelmet(), true);
+        ItemFactory::registerItem(new NetheriteChestplate(), true);
+        ItemFactory::registerItem(new NetheriteLeggings(), true);
+        ItemFactory::registerItem(new NetheriteBoots(), true);
         Item::initCreativeItems();
 
         switch ($this->getConfig()->get('crafting-recipes', false)) {
@@ -130,7 +130,7 @@ class Main extends PluginBase
                         [
                             'AAA',
                             'A A',
-                            '    '
+                            '   '
                         ],
                         ['A' => Item::get(self::ITEM_NETHERITE_INGOT)],
                         [Item::get(NetheriteHelmet::NETHERITE_HELMET)])
