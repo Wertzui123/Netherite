@@ -171,6 +171,15 @@ class Main extends PluginBase
                         ['A' => Item::get(self::ITEM_NETHERITE_INGOT)],
                         [Item::get(NetheriteBoots::NETHERITE_BOOTS)])
                 );
+                $this->getServer()->getCraftingManager()->registerShapedRecipe(new ShapedRecipe(
+                        [
+                            'AAA',
+                            'ABB',
+                            'BB '
+                        ],
+                        ['A' => Item::get(self::ITEM_NETHERITE_SCRAP), 'B' => Item::get(Item::GOLD_INGOT)],
+                        [Item::get(self::ITEM_NETHERITE_INGOT)])
+                );
                 break;
         }
 
