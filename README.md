@@ -6,6 +6,7 @@ This plugin adds netherite items, crafting recipes and more to your PocketMine-M
 - [x] Tools
 - [x] Armor
 - [x] Ingot and scrap
+- [x] Netherite Ingot recipe
 - [x] Knockback resistance
 - [x] Crafting recipes
 - [x] Items are immune to fire
