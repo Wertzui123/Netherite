@@ -51,6 +51,16 @@ class Main extends PluginBase
 
         switch ($this->getConfig()->get('crafting-recipes', false)) {
             case 'vanilla':
+                $this->getServer()->getCraftingManager()->registerShapedRecipe(new ShapedRecipe(
+                        [
+                            'AAA',
+                            'ABB',
+                            'BB '
+                        ],
+                        ['A' => Item::get(self::ITEM_NETHERITE_SCRAP), 'B' => Item::get(Item::GOLD_INGOT)],
+                        [Item::get(self::ITEM_NETHERITE_INGOT)])
+                );
+                
                 $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([Item::get(Item::DIAMOND_SWORD), Item::get(self::ITEM_NETHERITE_INGOT)], [Item::get(self::ITEM_NETHERITE_SWORD)]));
                 $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([Item::get(Item::DIAMOND_SHOVEL), Item::get(self::ITEM_NETHERITE_INGOT)], [Item::get(self::ITEM_NETHERITE_SHOVEL)]));
                 $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([Item::get(Item::DIAMOND_PICKAXE), Item::get(self::ITEM_NETHERITE_INGOT)], [Item::get(self::ITEM_NETHERITE_PICKAXE)]));
@@ -62,6 +72,16 @@ class Main extends PluginBase
                 $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([Item::get(Item::DIAMOND_BOOTS), Item::get(self::ITEM_NETHERITE_INGOT)], [Item::get(NetheriteBoots::NETHERITE_BOOTS)]));
                 break;
             case 'custom':
+                $this->getServer()->getCraftingManager()->registerShapedRecipe(new ShapedRecipe(
+                        [
+                            'AAA',
+                            'ABB',
+                            'BB '
+                        ],
+                        ['A' => Item::get(self::ITEM_NETHERITE_SCRAP), 'B' => Item::get(Item::GOLD_INGOT)],
+                        [Item::get(self::ITEM_NETHERITE_INGOT)])
+                );
+                
                 $this->getServer()->getCraftingManager()->registerShapedRecipe(new ShapedRecipe(
                         [
                             ' A ',
