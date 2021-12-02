@@ -6,11 +6,7 @@ use pocketmine\entity\object\ItemEntity;
 use pocketmine\event\entity\EntityDamageByBlockEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\Listener;
-use pocketmine\Player;
-use Wertzui123\Netherite\item\armor\NetheriteBoots;
-use Wertzui123\Netherite\item\armor\NetheriteChestplate;
-use Wertzui123\Netherite\item\armor\NetheriteHelmet;
-use Wertzui123\Netherite\item\armor\NetheriteLeggings;
+use pocketmine\player\Player;
 
 class EventListener implements Listener
 {
@@ -27,11 +23,11 @@ class EventListener implements Listener
                 case Main::ITEM_NETHERITE_PICKAXE:
                 case Main::ITEM_NETHERITE_AXE:
                 case Main::ITEM_NETHERITE_HOE:
-                case NetheriteHelmet::NETHERITE_HELMET:
-                case NetheriteChestplate::NETHERITE_CHESTPLATE:
-                case NetheriteLeggings::NETHERITE_LEGGINGS:
-                case NetheriteBoots::NETHERITE_BOOTS:
-                    $event->setCancelled();
+                case Main::NETHERITE_HELMET:
+                case Main::NETHERITE_CHESTPLATE:
+                case Main::NETHERITE_LEGGINGS:
+                case Main::NETHERITE_BOOTS:
+                    $event->cancel();
             }
         }
     }
@@ -44,16 +40,16 @@ class EventListener implements Listener
     {
         if (!$event->getEntity() instanceof Player) return;
         $modifier = 0;
-        if ($event->getEntity()->getArmorInventory()->getHelmet() instanceof NetheriteHelmet) {
+        if ($event->getEntity()->getArmorInventory()->getHelmet()->getId() === Main::NETHERITE_HELMET) {
             $modifier += 1;
         }
-        if ($event->getEntity()->getArmorInventory()->getChestplate() instanceof NetheriteChestplate) {
+        if ($event->getEntity()->getArmorInventory()->getChestplate()->getId() === Main::NETHERITE_CHESTPLATE) {
             $modifier += 1;
         }
-        if ($event->getEntity()->getArmorInventory()->getLeggings() instanceof NetheriteLeggings) {
+        if ($event->getEntity()->getArmorInventory()->getLeggings()->getId() === Main::NETHERITE_LEGGINGS) {
             $modifier += 1;
         }
-        if ($event->getEntity()->getArmorInventory()->getBoots() instanceof NetheriteBoots) {
+        if ($event->getEntity()->getArmorInventory()->getBoots()->getId() === Main::NETHERITE_BOOTS) {
             $modifier += 1;
         }
         if ($modifier > 0) {
