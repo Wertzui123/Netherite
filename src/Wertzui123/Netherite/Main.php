@@ -46,18 +46,18 @@ class Main extends PluginBase
         $constructor->invoke($instance, 'netherite', 6, 2031, 9, 10);
         $register->invoke(null, $instance);
 
-        ItemFactory::getInstance()->register(new Item(new ItemIdentifier(self::ITEM_NETHERITE_INGOT, 0), 'Netherite Ingot'));
-        ItemFactory::getInstance()->register(new Item(new ItemIdentifier(self::ITEM_NETHERITE_SCRAP, 0), 'Netherite Scrap'));
-        ItemFactory::getInstance()->register(new Sword(new ItemIdentifier(self::ITEM_NETHERITE_SWORD, 0), 'Netherite Sword', ToolTier::NETHERITE()));
+        ItemFactory::getInstance()->register(new Item(new ItemIdentifier(self::ITEM_NETHERITE_INGOT, 0), 'Netherite Ingot'),true);
+        ItemFactory::getInstance()->register(new Item(new ItemIdentifier(self::ITEM_NETHERITE_SCRAP, 0), 'Netherite Scrap'),true);
+        ItemFactory::getInstance()->register(new Sword(new ItemIdentifier(self::ITEM_NETHERITE_SWORD, 0), 'Netherite Sword', ToolTier::NETHERITE()),true);
         ItemFactory::getInstance()->register(new Shovel(new ItemIdentifier(self::ITEM_NETHERITE_SHOVEL, 0), 'Netherite Shovel', ToolTier::NETHERITE()));
-        ItemFactory::getInstance()->register(new Pickaxe(new ItemIdentifier(self::ITEM_NETHERITE_PICKAXE, 0), 'Netherite Pickaxe', ToolTier::NETHERITE()));
-        ItemFactory::getInstance()->register(new Axe(new ItemIdentifier(self::ITEM_NETHERITE_AXE, 0), 'Netherite Axe', ToolTier::NETHERITE()));
-        ItemFactory::getInstance()->register(new Hoe(new ItemIdentifier(self::ITEM_NETHERITE_HOE, 0), 'Netherite Hoe', ToolTier::NETHERITE()));
+        ItemFactory::getInstance()->register(new Pickaxe(new ItemIdentifier(self::ITEM_NETHERITE_PICKAXE, 0), 'Netherite Pickaxe', ToolTier::NETHERITE()),true);
+        ItemFactory::getInstance()->register(new Axe(new ItemIdentifier(self::ITEM_NETHERITE_AXE, 0), 'Netherite Axe', ToolTier::NETHERITE()),true);
+        ItemFactory::getInstance()->register(new Hoe(new ItemIdentifier(self::ITEM_NETHERITE_HOE, 0), 'Netherite Hoe', ToolTier::NETHERITE()),true);
 
-        ItemFactory::getInstance()->register(new Armor(new ItemIdentifier(self::NETHERITE_HELMET, 0), 'Netherite Helmet', new ArmorTypeInfo(6, 407, ArmorInventory::SLOT_HEAD)));
-        ItemFactory::getInstance()->register(new Armor(new ItemIdentifier(self::NETHERITE_CHESTPLATE, 0), 'Netherite Chestplate', new ArmorTypeInfo(3, 592, ArmorInventory::SLOT_CHEST)));
-        ItemFactory::getInstance()->register(new Armor(new ItemIdentifier(self::NETHERITE_LEGGINGS, 0), 'Netherite Leggings', new ArmorTypeInfo(3, 481, ArmorInventory::SLOT_LEGS)));
-        ItemFactory::getInstance()->register(new Armor(new ItemIdentifier(self::NETHERITE_BOOTS, 0), 'Netherite Boots', new ArmorTypeInfo(6, 555, ArmorInventory::SLOT_FEET)));
+        ItemFactory::getInstance()->register(new Armor(new ItemIdentifier(self::NETHERITE_HELMET, 0), 'Netherite Helmet', new ArmorTypeInfo(6, 407, ArmorInventory::SLOT_HEAD),true));
+        ItemFactory::getInstance()->register(new Armor(new ItemIdentifier(self::NETHERITE_CHESTPLATE, 0), 'Netherite Chestplate', new ArmorTypeInfo(3, 592, ArmorInventory::SLOT_CHEST),true));
+        ItemFactory::getInstance()->register(new Armor(new ItemIdentifier(self::NETHERITE_LEGGINGS, 0), 'Netherite Leggings', new ArmorTypeInfo(3, 481, ArmorInventory::SLOT_LEGS),true));
+        ItemFactory::getInstance()->register(new Armor(new ItemIdentifier(self::NETHERITE_BOOTS, 0), 'Netherite Boots', new ArmorTypeInfo(6, 555, ArmorInventory::SLOT_FEET),true));
 
         switch ($this->getConfig()->get('crafting-recipes', false)) {
             case 'vanilla':
