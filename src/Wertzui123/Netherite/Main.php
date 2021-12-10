@@ -47,17 +47,17 @@ class Main extends PluginBase
         $constructor->invoke($instance, 'netherite', 6, 2031, 9, 10);
         $register->invoke(null, $instance);
 
-        StringToItemParser::getInstance()->register("netherite_ingot", fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_INGOT, 0)));
-        StringToItemParser::getInstance()->register("netherite_scrap", fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_SCRAP, 0)));
-        StringToItemParser::getInstance()->register("netherite_sword", fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_SWORD, 0)));
-        StringToItemParser::getInstance()->register("netherite_shovel", fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_SHOVEL, 0)));
-        StringToItemParser::getInstance()->register("netherite_pickaxe", fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_PICKAXE, 0)));
-        StringToItemParser::getInstance()->register("netherite_axe", fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_PICKAXE, 0)));
-        StringToItemParser::getInstance()->register("netherite_hoe", fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_HOE, 0)));
-        StringToItemParser::getInstance()->register("netherite_helmet", fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_HELMET, 0)));
-        StringToItemParser::getInstance()->register("netherite_chestplate", fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_CHESTPLATE, 0)));
-        StringToItemParser::getInstance()->register("netherite_leggings", fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_LEGGINGS, 0)));
-        StringToItemParser::getInstance()->register("netherite_boots", fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_BOOTS, 0)));
+        StringToItemParser::getInstance()->register('netherite_ingot', fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_INGOT, 0)));
+        StringToItemParser::getInstance()->register('netherite_scrap', fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_SCRAP, 0)));
+        StringToItemParser::getInstance()->register('netherite_sword', fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_SWORD, 0)));
+        StringToItemParser::getInstance()->register('netherite_shovel', fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_SHOVEL, 0)));
+        StringToItemParser::getInstance()->register('netherite_pickaxe', fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_PICKAXE, 0)));
+        StringToItemParser::getInstance()->register('netherite_axe', fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_PICKAXE, 0)));
+        StringToItemParser::getInstance()->register('netherite_hoe', fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_HOE, 0)));
+        StringToItemParser::getInstance()->register('netherite_helmet', fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_HELMET, 0)));
+        StringToItemParser::getInstance()->register('netherite_chestplate', fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_CHESTPLATE, 0)));
+        StringToItemParser::getInstance()->register('netherite_leggings', fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_LEGGINGS, 0)));
+        StringToItemParser::getInstance()->register('netherite_boots', fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_BOOTS, 0)));
 
         ItemFactory::getInstance()->register(new Item(new ItemIdentifier(self::ITEM_NETHERITE_INGOT, 0), 'Netherite Ingot'));
         ItemFactory::getInstance()->register(new Item(new ItemIdentifier(self::ITEM_NETHERITE_SCRAP, 0), 'Netherite Scrap'));
