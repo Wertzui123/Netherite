@@ -23,10 +23,10 @@ class EventListener implements Listener
                 case Main::ITEM_NETHERITE_PICKAXE:
                 case Main::ITEM_NETHERITE_AXE:
                 case Main::ITEM_NETHERITE_HOE:
-                case Main::NETHERITE_HELMET:
-                case Main::NETHERITE_CHESTPLATE:
-                case Main::NETHERITE_LEGGINGS:
-                case Main::NETHERITE_BOOTS:
+                case Main::ITEM_NETHERITE_HELMET:
+                case Main::ITEM_NETHERITE_CHESTPLATE:
+                case Main::ITEM_NETHERITE_LEGGINGS:
+                case Main::ITEM_NETHERITE_BOOTS:
                     $event->cancel();
             }
         }
@@ -40,16 +40,16 @@ class EventListener implements Listener
     {
         if (!$event->getEntity() instanceof Player) return;
         $modifier = 0;
-        if ($event->getEntity()->getArmorInventory()->getHelmet()->getId() === Main::NETHERITE_HELMET) {
+        if ($event->getEntity()->getArmorInventory()->getHelmet()->getId() === Main::ITEM_NETHERITE_HELMET) {
             $modifier += 1;
         }
-        if ($event->getEntity()->getArmorInventory()->getChestplate()->getId() === Main::NETHERITE_CHESTPLATE) {
+        if ($event->getEntity()->getArmorInventory()->getChestplate()->getId() === Main::ITEM_NETHERITE_CHESTPLATE) {
             $modifier += 1;
         }
-        if ($event->getEntity()->getArmorInventory()->getLeggings()->getId() === Main::NETHERITE_LEGGINGS) {
+        if ($event->getEntity()->getArmorInventory()->getLeggings()->getId() === Main::ITEM_NETHERITE_LEGGINGS) {
             $modifier += 1;
         }
-        if ($event->getEntity()->getArmorInventory()->getBoots()->getId() === Main::NETHERITE_BOOTS) {
+        if ($event->getEntity()->getArmorInventory()->getBoots()->getId() === Main::ITEM_NETHERITE_BOOTS) {
             $modifier += 1;
         }
         if ($modifier > 0) {

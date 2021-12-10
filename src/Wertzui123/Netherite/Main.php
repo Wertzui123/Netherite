@@ -31,10 +31,10 @@ class Main extends PluginBase
     const ITEM_NETHERITE_PICKAXE = 745;
     const ITEM_NETHERITE_AXE = 746;
     const ITEM_NETHERITE_HOE = 747;
-    const NETHERITE_HELMET = 748;
-    const NETHERITE_CHESTPLATE = 749;
-    const NETHERITE_LEGGINGS = 750;
-    const NETHERITE_BOOTS = 751;
+    const ITEM_NETHERITE_HELMET = 748;
+    const ITEM_NETHERITE_CHESTPLATE = 749;
+    const ITEM_NETHERITE_LEGGINGS = 750;
+    const ITEM_NETHERITE_BOOTS = 751;
 
     public function onEnable(): void
     {
@@ -47,18 +47,6 @@ class Main extends PluginBase
         $constructor->invoke($instance, 'netherite', 6, 2031, 9, 10);
         $register->invoke(null, $instance);
 
-        StringToItemParser::getInstance()->register('netherite_ingot', fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_INGOT, 0)));
-        StringToItemParser::getInstance()->register('netherite_scrap', fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_SCRAP, 0)));
-        StringToItemParser::getInstance()->register('netherite_sword', fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_SWORD, 0)));
-        StringToItemParser::getInstance()->register('netherite_shovel', fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_SHOVEL, 0)));
-        StringToItemParser::getInstance()->register('netherite_pickaxe', fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_PICKAXE, 0)));
-        StringToItemParser::getInstance()->register('netherite_axe', fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_PICKAXE, 0)));
-        StringToItemParser::getInstance()->register('netherite_hoe', fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_HOE, 0)));
-        StringToItemParser::getInstance()->register('netherite_helmet', fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_HELMET, 0)));
-        StringToItemParser::getInstance()->register('netherite_chestplate', fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_CHESTPLATE, 0)));
-        StringToItemParser::getInstance()->register('netherite_leggings', fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_LEGGINGS, 0)));
-        StringToItemParser::getInstance()->register('netherite_boots', fn(string $input) => new Item(new ItemIdentifier(self::NETHERITE_BOOTS, 0)));
-
         ItemFactory::getInstance()->register(new Item(new ItemIdentifier(self::ITEM_NETHERITE_INGOT, 0), 'Netherite Ingot'));
         ItemFactory::getInstance()->register(new Item(new ItemIdentifier(self::ITEM_NETHERITE_SCRAP, 0), 'Netherite Scrap'));
         ItemFactory::getInstance()->register(new Sword(new ItemIdentifier(self::ITEM_NETHERITE_SWORD, 0), 'Netherite Sword', ToolTier::NETHERITE()));
@@ -67,10 +55,23 @@ class Main extends PluginBase
         ItemFactory::getInstance()->register(new Axe(new ItemIdentifier(self::ITEM_NETHERITE_AXE, 0), 'Netherite Axe', ToolTier::NETHERITE()));
         ItemFactory::getInstance()->register(new Hoe(new ItemIdentifier(self::ITEM_NETHERITE_HOE, 0), 'Netherite Hoe', ToolTier::NETHERITE()));
 
-        ItemFactory::getInstance()->register(new Armor(new ItemIdentifier(self::NETHERITE_HELMET, 0), 'Netherite Helmet', new ArmorTypeInfo(6, 407, ArmorInventory::SLOT_HEAD)));
-        ItemFactory::getInstance()->register(new Armor(new ItemIdentifier(self::NETHERITE_CHESTPLATE, 0), 'Netherite Chestplate', new ArmorTypeInfo(3, 592, ArmorInventory::SLOT_CHEST)));
-        ItemFactory::getInstance()->register(new Armor(new ItemIdentifier(self::NETHERITE_LEGGINGS, 0), 'Netherite Leggings', new ArmorTypeInfo(3, 481, ArmorInventory::SLOT_LEGS)));
-        ItemFactory::getInstance()->register(new Armor(new ItemIdentifier(self::NETHERITE_BOOTS, 0), 'Netherite Boots', new ArmorTypeInfo(6, 555, ArmorInventory::SLOT_FEET)));
+        ItemFactory::getInstance()->register(new Armor(new ItemIdentifier(self::ITEM_NETHERITE_HELMET, 0), 'Netherite Helmet', new ArmorTypeInfo(6, 407, ArmorInventory::SLOT_HEAD)));
+        ItemFactory::getInstance()->register(new Armor(new ItemIdentifier(self::ITEM_NETHERITE_CHESTPLATE, 0), 'Netherite Chestplate', new ArmorTypeInfo(3, 592, ArmorInventory::SLOT_CHEST)));
+        ItemFactory::getInstance()->register(new Armor(new ItemIdentifier(self::ITEM_NETHERITE_LEGGINGS, 0), 'Netherite Leggings', new ArmorTypeInfo(3, 481, ArmorInventory::SLOT_LEGS)));
+        ItemFactory::getInstance()->register(new Armor(new ItemIdentifier(self::ITEM_NETHERITE_BOOTS, 0), 'Netherite Boots', new ArmorTypeInfo(6, 555, ArmorInventory::SLOT_FEET)));
+
+        StringToItemParser::getInstance()->register('netherite_ingot', fn(string $input) => new Item(new ItemIdentifier(self::ITEM_NETHERITE_INGOT, 0)));
+        StringToItemParser::getInstance()->register('netherite_scrap', fn(string $input) => new Item(new ItemIdentifier(self::ITEM_NETHERITE_SCRAP, 0)));
+        StringToItemParser::getInstance()->register('netherite_sword', fn(string $input) => new Item(new ItemIdentifier(self::ITEM_NETHERITE_SWORD, 0)));
+        StringToItemParser::getInstance()->register('netherite_shovel', fn(string $input) => new Item(new ItemIdentifier(self::ITEM_NETHERITE_SHOVEL, 0)));
+        StringToItemParser::getInstance()->register('netherite_pickaxe', fn(string $input) => new Item(new ItemIdentifier(self::ITEM_NETHERITE_PICKAXE, 0)));
+        StringToItemParser::getInstance()->register('netherite_axe', fn(string $input) => new Item(new ItemIdentifier(self::ITEM_NETHERITE_PICKAXE, 0)));
+        StringToItemParser::getInstance()->register('netherite_hoe', fn(string $input) => new Item(new ItemIdentifier(self::ITEM_NETHERITE_HOE, 0)));
+
+        StringToItemParser::getInstance()->register('netherite_helmet', fn(string $input) => new Item(new ItemIdentifier(self::ITEM_NETHERITE_HELMET, 0)));
+        StringToItemParser::getInstance()->register('netherite_chestplate', fn(string $input) => new Item(new ItemIdentifier(self::ITEM_NETHERITE_CHESTPLATE, 0)));
+        StringToItemParser::getInstance()->register('netherite_leggings', fn(string $input) => new Item(new ItemIdentifier(self::ITEM_NETHERITE_LEGGINGS, 0)));
+        StringToItemParser::getInstance()->register('netherite_boots', fn(string $input) => new Item(new ItemIdentifier(self::ITEM_NETHERITE_BOOTS, 0)));
 
         switch ($this->getConfig()->get('crafting-recipes', false)) {
             case 'vanilla':
@@ -88,10 +89,10 @@ class Main extends PluginBase
                 $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([VanillaItems::DIAMOND_PICKAXE(), ItemFactory::getInstance()->get(self::ITEM_NETHERITE_INGOT)], [ItemFactory::getInstance()->get(self::ITEM_NETHERITE_PICKAXE)]));
                 $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([VanillaItems::DIAMOND_AXE(), ItemFactory::getInstance()->get(self::ITEM_NETHERITE_INGOT)], [ItemFactory::getInstance()->get(self::ITEM_NETHERITE_AXE)]));
 
-                $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([VanillaItems::DIAMOND_HELMET(), ItemFactory::getInstance()->get(self::ITEM_NETHERITE_INGOT)], [ItemFactory::getInstance()->get(self::NETHERITE_HELMET)]));
-                $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([VanillaItems::DIAMOND_CHESTPLATE(), ItemFactory::getInstance()->get(self::ITEM_NETHERITE_INGOT)], [ItemFactory::getInstance()->get(self::NETHERITE_CHESTPLATE)]));
-                $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([VanillaItems::DIAMOND_LEGGINGS(), ItemFactory::getInstance()->get(self::ITEM_NETHERITE_INGOT)], [ItemFactory::getInstance()->get(self::NETHERITE_LEGGINGS)]));
-                $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([VanillaItems::DIAMOND_BOOTS(), ItemFactory::getInstance()->get(self::ITEM_NETHERITE_INGOT)], [ItemFactory::getInstance()->get(self::NETHERITE_BOOTS)]));
+                $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([VanillaItems::DIAMOND_HELMET(), ItemFactory::getInstance()->get(self::ITEM_NETHERITE_INGOT)], [ItemFactory::getInstance()->get(self::ITEM_NETHERITE_HELMET)]));
+                $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([VanillaItems::DIAMOND_CHESTPLATE(), ItemFactory::getInstance()->get(self::ITEM_NETHERITE_INGOT)], [ItemFactory::getInstance()->get(self::ITEM_NETHERITE_CHESTPLATE)]));
+                $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([VanillaItems::DIAMOND_LEGGINGS(), ItemFactory::getInstance()->get(self::ITEM_NETHERITE_INGOT)], [ItemFactory::getInstance()->get(self::ITEM_NETHERITE_LEGGINGS)]));
+                $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([VanillaItems::DIAMOND_BOOTS(), ItemFactory::getInstance()->get(self::ITEM_NETHERITE_INGOT)], [ItemFactory::getInstance()->get(self::ITEM_NETHERITE_BOOTS)]));
                 break;
             case 'custom':
                 $this->getServer()->getCraftingManager()->registerShapedRecipe(new ShapedRecipe(
@@ -174,7 +175,7 @@ class Main extends PluginBase
                             '   '
                         ],
                         ['A' => ItemFactory::getInstance()->get(self::ITEM_NETHERITE_INGOT)],
-                        [ItemFactory::getInstance()->get(self::NETHERITE_HELMET)])
+                        [ItemFactory::getInstance()->get(self::ITEM_NETHERITE_HELMET)])
                 );
                 $this->getServer()->getCraftingManager()->registerShapedRecipe(new ShapedRecipe(
                         [
@@ -183,7 +184,7 @@ class Main extends PluginBase
                             'AAA'
                         ],
                         ['A' => ItemFactory::getInstance()->get(self::ITEM_NETHERITE_INGOT)],
-                        [ItemFactory::getInstance()->get(self::NETHERITE_CHESTPLATE)])
+                        [ItemFactory::getInstance()->get(self::ITEM_NETHERITE_CHESTPLATE)])
                 );
                 $this->getServer()->getCraftingManager()->registerShapedRecipe(new ShapedRecipe(
                         [
@@ -192,7 +193,7 @@ class Main extends PluginBase
                             'A A'
                         ],
                         ['A' => ItemFactory::getInstance()->get(self::ITEM_NETHERITE_INGOT)],
-                        [ItemFactory::getInstance()->get(self::NETHERITE_LEGGINGS)])
+                        [ItemFactory::getInstance()->get(self::ITEM_NETHERITE_LEGGINGS)])
                 );
                 $this->getServer()->getCraftingManager()->registerShapedRecipe(new ShapedRecipe(
                         [
@@ -201,7 +202,7 @@ class Main extends PluginBase
                             'A A'
                         ],
                         ['A' => ItemFactory::getInstance()->get(self::ITEM_NETHERITE_INGOT)],
-                        [ItemFactory::getInstance()->get(self::NETHERITE_BOOTS)])
+                        [ItemFactory::getInstance()->get(self::ITEM_NETHERITE_BOOTS)])
                 );
                 $this->getServer()->getCraftingManager()->registerShapedRecipe(new ShapedRecipe(
                         [
@@ -210,7 +211,7 @@ class Main extends PluginBase
                             '   '
                         ],
                         ['A' => ItemFactory::getInstance()->get(self::ITEM_NETHERITE_INGOT)],
-                        [ItemFactory::getInstance()->get(self::NETHERITE_BOOTS)])
+                        [ItemFactory::getInstance()->get(self::ITEM_NETHERITE_BOOTS)])
                 );
                 break;
         }
