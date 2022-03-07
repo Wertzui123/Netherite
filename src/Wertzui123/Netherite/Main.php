@@ -65,7 +65,7 @@ class Main extends PluginBase
         StringToItemParser::getInstance()->register('netherite_sword', fn(string $input) => new Item(new ItemIdentifier(self::ITEM_NETHERITE_SWORD, 0)));
         StringToItemParser::getInstance()->register('netherite_shovel', fn(string $input) => new Item(new ItemIdentifier(self::ITEM_NETHERITE_SHOVEL, 0)));
         StringToItemParser::getInstance()->register('netherite_pickaxe', fn(string $input) => new Item(new ItemIdentifier(self::ITEM_NETHERITE_PICKAXE, 0)));
-        StringToItemParser::getInstance()->register('netherite_axe', fn(string $input) => new Item(new ItemIdentifier(self::ITEM_NETHERITE_PICKAXE, 0)));
+        StringToItemParser::getInstance()->register('netherite_axe', fn(string $input) => new Item(new ItemIdentifier(self::ITEM_NETHERITE_AXE, 0)));
         StringToItemParser::getInstance()->register('netherite_hoe', fn(string $input) => new Item(new ItemIdentifier(self::ITEM_NETHERITE_HOE, 0)));
 
         StringToItemParser::getInstance()->register('netherite_helmet', fn(string $input) => new Item(new ItemIdentifier(self::ITEM_NETHERITE_HELMET, 0)));
