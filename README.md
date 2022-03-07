@@ -11,8 +11,9 @@ This plugin adds netherite items, crafting recipes and more to your PocketMine-M
 - [x] Items are immune to fire
 
 # Config
-This plugin was developed to bring vanilla features to PocketMine, so why does it have a config at all?
-<br>Because some functions netherite normally depends on (e.g. the smithing table) are not yet implemented in PocketMine and this plugin needs a workaround for these things.
+> This plugin was developed to bring vanilla features to PocketMine, so why does it have a config at all?
+
+Because some functions netherite normally depends on (e.g. the smithing table) are not yet implemented in PocketMine and this plugin needs a workaround for these things.
 <br>For this reason, the config allows you to choose between two different types of crafting recipes for netherite items:
 <br>
 <br>vanilla: Diamond Sword + Netherite Ingot = Netherite Sword
