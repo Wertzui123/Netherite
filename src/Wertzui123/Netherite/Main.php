@@ -87,15 +87,7 @@ class Main extends PluginBase
 
         switch ($this->getConfig()->get('crafting-recipes', false)) {
             case 'vanilla':
-                $this->getServer()->getCraftingManager()->registerShapedRecipe(new ShapedRecipe(
-                        [
-                            'AAA',
-                            'ABB',
-                            'BB '
-                        ],
-                        ['A' => ItemFactory::getInstance()->get(self::ITEM_NETHERITE_SCRAP), 'B' => VanillaItems::GOLD_INGOT()],
-                        [ItemFactory::getInstance()->get(self::ITEM_NETHERITE_INGOT)])
-                );
+                // The recipe for netherite ingots is already built into PocketMine-MP
                 $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([VanillaItems::DIAMOND_SWORD(), ItemFactory::getInstance()->get(self::ITEM_NETHERITE_INGOT)], [ItemFactory::getInstance()->get(self::ITEM_NETHERITE_SWORD)]));
                 $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([VanillaItems::DIAMOND_SHOVEL(), ItemFactory::getInstance()->get(self::ITEM_NETHERITE_INGOT)], [ItemFactory::getInstance()->get(self::ITEM_NETHERITE_SHOVEL)]));
                 $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([VanillaItems::DIAMOND_PICKAXE(), ItemFactory::getInstance()->get(self::ITEM_NETHERITE_INGOT)], [ItemFactory::getInstance()->get(self::ITEM_NETHERITE_PICKAXE)]));
@@ -107,15 +99,7 @@ class Main extends PluginBase
                 $this->getServer()->getCraftingManager()->registerShapelessRecipe(new ShapelessRecipe([VanillaItems::DIAMOND_BOOTS(), ItemFactory::getInstance()->get(self::ITEM_NETHERITE_INGOT)], [ItemFactory::getInstance()->get(self::ITEM_NETHERITE_BOOTS)]));
                 break;
             case 'custom':
-                $this->getServer()->getCraftingManager()->registerShapedRecipe(new ShapedRecipe(
-                        [
-                            'AAA',
-                            'ABB',
-                            'BB '
-                        ],
-                        ['A' => ItemFactory::getInstance()->get(self::ITEM_NETHERITE_SCRAP), 'B' => VanillaItems::GOLD_INGOT()],
-                        [ItemFactory::getInstance()->get(self::ITEM_NETHERITE_INGOT)])
-                );
+                // The recipe for netherite ingots is already built into PocketMine-MP
                 $this->getServer()->getCraftingManager()->registerShapedRecipe(new ShapedRecipe(
                         [
                             ' A ',
