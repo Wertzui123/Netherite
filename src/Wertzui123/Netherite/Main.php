@@ -61,28 +61,28 @@ class Main extends PluginBase
         ItemFactory::getInstance()->register(new Armor(new ItemIdentifier(self::ITEM_NETHERITE_LEGGINGS, 0), 'Netherite Leggings', new ArmorTypeInfo(3, 481, ArmorInventory::SLOT_LEGS)));
         ItemFactory::getInstance()->register(new Armor(new ItemIdentifier(self::ITEM_NETHERITE_BOOTS, 0), 'Netherite Boots', new ArmorTypeInfo(6, 555, ArmorInventory::SLOT_FEET)));
 
-        StringToItemParser::getInstance()->register('netherite_ingot', fn(string $input) => new Item(new ItemIdentifier(self::ITEM_NETHERITE_INGOT, 0)));
+        StringToItemParser::getInstance()->register('netherite_ingot', fn(string $input) => ItemFactory::getInstance()->get(self::ITEM_NETHERITE_INGOT));
         CreativeInventory::getInstance()->add(ItemFactory::getInstance()->get(self::ITEM_NETHERITE_INGOT));
-        StringToItemParser::getInstance()->register('netherite_scrap', fn(string $input) => new Item(new ItemIdentifier(self::ITEM_NETHERITE_SCRAP, 0)));
+        StringToItemParser::getInstance()->register('netherite_scrap', fn(string $input) => ItemFactory::getInstance()->get(self::ITEM_NETHERITE_SCRAP));
         CreativeInventory::getInstance()->add(ItemFactory::getInstance()->get(self::ITEM_NETHERITE_SCRAP));
-        StringToItemParser::getInstance()->register('netherite_sword', fn(string $input) => new Item(new ItemIdentifier(self::ITEM_NETHERITE_SWORD, 0)));
+        StringToItemParser::getInstance()->register('netherite_sword', fn(string $input) => ItemFactory::getInstance()->get(self::ITEM_NETHERITE_SWORD));
         CreativeInventory::getInstance()->add(ItemFactory::getInstance()->get(self::ITEM_NETHERITE_SWORD));
-        StringToItemParser::getInstance()->register('netherite_shovel', fn(string $input) => new Item(new ItemIdentifier(self::ITEM_NETHERITE_SHOVEL, 0)));
+        StringToItemParser::getInstance()->register('netherite_shovel', fn(string $input) => ItemFactory::getInstance()->get(self::ITEM_NETHERITE_SHOVEL));
         CreativeInventory::getInstance()->add(ItemFactory::getInstance()->get(self::ITEM_NETHERITE_SHOVEL));
-        StringToItemParser::getInstance()->register('netherite_pickaxe', fn(string $input) => new Item(new ItemIdentifier(self::ITEM_NETHERITE_PICKAXE, 0)));
+        StringToItemParser::getInstance()->register('netherite_pickaxe', fn(string $input) => ItemFactory::getInstance()->get(self::ITEM_NETHERITE_PICKAXE));
         CreativeInventory::getInstance()->add(ItemFactory::getInstance()->get(self::ITEM_NETHERITE_PICKAXE));
-        StringToItemParser::getInstance()->register('netherite_axe', fn(string $input) => new Item(new ItemIdentifier(self::ITEM_NETHERITE_AXE, 0)));
+        StringToItemParser::getInstance()->register('netherite_axe', fn(string $input) => ItemFactory::getInstance()->get(self::ITEM_NETHERITE_AXE));
         CreativeInventory::getInstance()->add(ItemFactory::getInstance()->get(self::ITEM_NETHERITE_AXE));
-        StringToItemParser::getInstance()->register('netherite_hoe', fn(string $input) => new Item(new ItemIdentifier(self::ITEM_NETHERITE_HOE, 0)));
+        StringToItemParser::getInstance()->register('netherite_hoe', fn(string $input) => ItemFactory::getInstance()->get(self::ITEM_NETHERITE_HOE));
         CreativeInventory::getInstance()->add(ItemFactory::getInstance()->get(self::ITEM_NETHERITE_HOE));
 
-        StringToItemParser::getInstance()->register('netherite_helmet', fn(string $input) => new Item(new ItemIdentifier(self::ITEM_NETHERITE_HELMET, 0)));
+        StringToItemParser::getInstance()->register('netherite_helmet', fn(string $input) => ItemFactory::getInstance()->get(self::ITEM_NETHERITE_HELMET));
         CreativeInventory::getInstance()->add(ItemFactory::getInstance()->get(self::ITEM_NETHERITE_HELMET));
-        StringToItemParser::getInstance()->register('netherite_chestplate', fn(string $input) => new Item(new ItemIdentifier(self::ITEM_NETHERITE_CHESTPLATE, 0)));
+        StringToItemParser::getInstance()->register('netherite_chestplate', fn(string $input) => ItemFactory::getInstance()->get(self::ITEM_NETHERITE_CHESTPLATE));
         CreativeInventory::getInstance()->add(ItemFactory::getInstance()->get(self::ITEM_NETHERITE_CHESTPLATE));
-        StringToItemParser::getInstance()->register('netherite_leggings', fn(string $input) => new Item(new ItemIdentifier(self::ITEM_NETHERITE_LEGGINGS, 0)));
+        StringToItemParser::getInstance()->register('netherite_leggings', fn(string $input) => ItemFactory::getInstance()->get(self::ITEM_NETHERITE_LEGGINGS));
         CreativeInventory::getInstance()->add(ItemFactory::getInstance()->get(self::ITEM_NETHERITE_LEGGINGS));
-        StringToItemParser::getInstance()->register('netherite_boots', fn(string $input) => new Item(new ItemIdentifier(self::ITEM_NETHERITE_BOOTS, 0)));
+        StringToItemParser::getInstance()->register('netherite_boots', fn(string $input) => ItemFactory::getInstance()->get(self::ITEM_NETHERITE_BOOTS));
         CreativeInventory::getInstance()->add(ItemFactory::getInstance()->get(self::ITEM_NETHERITE_BOOTS));
 
         switch ($this->getConfig()->get('crafting-recipes', false)) {
